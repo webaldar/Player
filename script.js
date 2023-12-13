@@ -67,7 +67,7 @@ function renderTrack(trackForRendering){
 
   let playerElement = document.createElement('audio');
   playerElement.src = trackForRendering.fileUrl;
-  playerElement.control = true;
+  playerElement.controls = true;
   trackElement.append(playerElement);
 
   let coverElement = document.createElement('img');
