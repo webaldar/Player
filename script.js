@@ -27,8 +27,12 @@ const playlist = {
 // render
 renderPlaylist(playlist)
 
-function renderPlaylist(playlistForRendering) {    
-   
+function renderPlaylist(playlistForRendering) {
+  let main = document.querySelector('#main');
+  let playlistSection = document.createElement('section');
+  playlistSection.textContent = 'asasasaasa';
+  //playlistSection.classList.add('playlist-content');
+  main.append(playlistSection);
 }
 
 
