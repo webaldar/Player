@@ -1,41 +1,93 @@
 // data 
 const playlist = {
   title: "Hip-Hop Hits",
-  coverImageUrl: "./playlist1.png",
+  coverImageUrl: "./assets/img/hit_img.png",
   info: {
     totalTracksCount: 4,
     totalTracksDurationInSeconds: 733,
   },
   tracks: [
     {
-      coverImageUrl: "track1.png",
+      coverImageUrl: "./assets/img/eminem.png",
       artistName: "Eminem",
       title: "Rap God",
-      fileUrl: "Eminem_-_Rap_God.mp3",
+      fileUrl: "./song/song1.mp3",
       isHot: false,
     },
     {
-      coverImageUrl: "track2.png",
+      coverImageUrl: "./assets/img/50cent.png",
       artistName: "50cent",
       title: "In da Club",
-      fileUrl: "50_Cent_-_In_Da_Club_FlexyOkay.com.mp3",
+      fileUrl: "./song/song2.mp3",
+      isHot: true,
+    },
+    {
+      coverImageUrl: "./assets/img/dmx.png",
+      artistName: "DMX",
+      title: "X Gon Give It To Ya",
+      fileUrl: "./song/song3.mp3",
+      isHot: false,
+    },
+    {
+      coverImageUrl: "./assets/img/eminen_feat_50cent.png",
+      artistName: "Eminem feat 50 Cent, Cashis, Lloyd Banks",      
+      title: "You Don't Know",
+      fileUrl: "./song/song4.mp3",
       isHot: true,
     },
   ],
 };
 
 // render
-renderPlaylist(playlist)
+renderPlaylist(playlist);
+renderPlaylist(playlist);
 
 function renderPlaylist(playlistForRendering) {
-  let main = document.querySelector('#main');
-  let playlistSection = document.createElement('section');
-  playlistSection.textContent = 'asasasaasa';
-  //playlistSection.classList.add('playlist-content');
-  main.append(playlistSection);
+  let container = document.querySelector('.container');
+  let playlistSection = document.createElement('section');  
+  playlistSection.classList.add('playlist_section');  
+  container.append(playlistSection);
+
+  renderPlaylistTitle(playlistForRendering);
+  renderPlaylistTracks(playlistForRendering.tracks);
 }
 
+function renderPlaylistTitle(playlistForRendering){
 
+  let playlistSection = document.querySelector('.playlist_section');
+
+  let playlistCover = document.createElement('img');
+  playlistCover.src = playlistForRendering.coverImageUrl;
+  playlistSection.append(playlistCover);
+
+  let playlistHead = document.createElement('span');
+  playlistHead.textContent = 'Playlist';
+  playlistSection.append(playlistHead);
+
+  let playlistTitle = document.createElement('h2');
+  playlistTitle.textContent = playlistForRendering.title;
+  playlistSection.append(playlistTitle);
+}
+
+function renderPlaylistTracks(tracksForRendering){
+  let playlistSection = document.querySelector('.playlist_section');
+  for(let i = 0; i < tracksForRendering.length; i++){
+
+    let trackCoverImage = document.createElement('img');
+    trackCoverImage.src = tracksForRendering[i].coverImageUrl;
+    playlistSection.append(trackCoverImage);
+
+    let trackTitle = document.createElement('span');
+    trackTitle.textContent = tracksForRendering[i].artistName + ' - ' + tracksForRendering[i].title;
+    playlistSection.append(trackTitle);
+
+    let trackPlayer = document.createElement('audio');
+    trackPlayer.controls = true;
+    trackPlayer.src = tracksForRendering[i].fileUrl;
+    playlistSection.append(trackPlayer);
+  }
+
+}
 
 
 

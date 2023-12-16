@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 ul {
     list-style: none;
@@ -12,6 +13,7 @@ body {
     font-style: normal;
     line-height: normal;
     font-family: sans-serif;
+    color: #FFF;
 }
 
 .header {    
@@ -20,7 +22,7 @@ body {
     padding-left: 64px;    
 }
 #main {
-    padding: 31px 64px 31px;    
+    padding: 31px 64px 31px;      
 }
 h1 {
     color: #FFF;    
@@ -29,9 +31,20 @@ h1 {
     line-height: normal;
     margin-bottom: 30px;
 }
+.container {
+    display: flex;
+    justify-content: space-between;  
+}
 .playlist-content {
     width: 570px;
     height: 540px;
     border-radius: 4px;
+    background: #1C1C1C;
+}
+.playlist_section {
+    width: 540px;
+    min-height: 0.75vh;
+    border-radius: 4px;
+    padding: 24px 36px 47px;
     background: #1C1C1C;
 }
