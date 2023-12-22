@@ -1,6 +1,4 @@
-import { playlists } from "./components/data/data.component.js";
-import { renderPlaylists } from "./components/render/renderPlaylists.component.js";
-// console.log(playlists);
-// console.log(renderPlaylists);
+import { data } from "./components/data/data.component.js";
+import { renderCounter} from "./components/counter/renderCounter.js"
 
-renderPlaylists(playlists);
+renderCounter(data.clientCount);
