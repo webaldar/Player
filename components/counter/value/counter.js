@@ -1,5 +1,7 @@
-export function Count(ClientsCount){
+import { data } from "../../../data/data.component.js";
+
+export function Count(){
     const element = document.createElement('div');
-    element.append(ClientsCount);
+    element.append(data.clientsCount);
     return element;
 }
